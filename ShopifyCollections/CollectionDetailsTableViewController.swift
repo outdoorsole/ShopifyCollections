@@ -9,8 +9,11 @@
 import UIKit
 
 class CollectionDetailsTableViewController: UITableViewController {
+    var currentCollection: Collection?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(currentCollection ?? "")
     }
 }

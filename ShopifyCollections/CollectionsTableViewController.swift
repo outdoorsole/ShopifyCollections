@@ -12,6 +12,7 @@ class CollectionsTableViewController: UITableViewController {
     
     // Property to store collections list from API
     var customCollections: CustomCollections?
+    var selectedRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,12 @@ class CollectionsTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row \(indexPath.row) was tapped")
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "detailsSegue", sender: nil)
     }
     
     // MARK: - Helper method
@@ -74,6 +81,14 @@ class CollectionsTableViewController: UITableViewController {
                 }
             }
             task.resume()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue called")
+        
+        if let destination = segue.destination as? CollectionDetailsTableViewController {
+            destination.currentCollection = customCollections?.custom_collections[selectedRow]
         }
     }
 }

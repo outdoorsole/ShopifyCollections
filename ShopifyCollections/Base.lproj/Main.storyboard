@@ -41,9 +41,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="5eN-z4-t7g" kind="show" id="xka-lj-oLw"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -54,6 +51,9 @@
                     <navigationItem key="navigationItem" title="Custom Collections" id="atT-hU-qGz">
                         <barButtonItem key="backBarButtonItem" title="collections" id="us3-ku-NMr"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="5eN-z4-t7g" kind="show" identifier="detailsSegue" id="voL-cG-TYc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y26-tF-4E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="J70-Mf-WwK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" id="J70-Mf-WwK">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J70-Mf-WwK" id="3Dc-Us-AeS">
