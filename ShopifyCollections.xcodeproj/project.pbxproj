@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		16530A452247FE98008B953E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A442247FE98008B953E /* AppDelegate.swift */; };
-		16530A472247FE98008B953E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A462247FE98008B953E /* ViewController.swift */; };
 		16530A4A2247FE98008B953E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16530A482247FE98008B953E /* Main.storyboard */; };
 		16530A4C2247FE99008B953E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16530A4B2247FE99008B953E /* Assets.xcassets */; };
 		16530A4F2247FE99008B953E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16530A4D2247FE99008B953E /* LaunchScreen.storyboard */; };
+		16530A5B22480357008B953E /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A5A22480357008B953E /* CollectionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16530A412247FE98008B953E /* ShopifyCollections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopifyCollections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16530A442247FE98008B953E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16530A462247FE98008B953E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		16530A492247FE98008B953E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16530A4B2247FE99008B953E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16530A4E2247FE99008B953E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16530A502247FE99008B953E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16530A5A22480357008B953E /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				16530A442247FE98008B953E /* AppDelegate.swift */,
-				16530A462247FE98008B953E /* ViewController.swift */,
 				16530A482247FE98008B953E /* Main.storyboard */,
 				16530A4B2247FE99008B953E /* Assets.xcassets */,
 				16530A4D2247FE99008B953E /* LaunchScreen.storyboard */,
 				16530A502247FE99008B953E /* Info.plist */,
+				16530A5A22480357008B953E /* CollectionsTableViewController.swift */,
 			);
 			path = ShopifyCollections;
 			sourceTree = "<group>";
@@ -135,8 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16530A472247FE98008B953E /* ViewController.swift in Sources */,
 				16530A452247FE98008B953E /* AppDelegate.swift in Sources */,
+				16530A5B22480357008B953E /* CollectionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

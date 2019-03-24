@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CollectionsTableViewController.swift
 //  ShopifyCollections
 //
 //  Created by Maribel Montejano on 3/24/19.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CollectionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
-
