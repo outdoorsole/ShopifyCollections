@@ -19,6 +19,26 @@ class CollectionsTableViewController: UITableViewController {
         getCollections()
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let collectionsCount = customCollections?.custom_collections.count {
+            return collectionsCount
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCollectionCell", for: indexPath)
+        
+        if let title = customCollections?.custom_collections[indexPath.row].title {
+            cell.textLabel?.text = title
+        }
+        if let id = customCollections?.custom_collections[indexPath.row].id {
+            cell.detailTextLabel?.text = String(id)
+        }
+        
+        return cell
+    }
+    
     // MARK: - Helper method
     func getCollections() {
         if let url = URL(string: "https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=") {
@@ -47,6 +67,9 @@ class CollectionsTableViewController: UITableViewController {
                         
                         // Update the class property to the result from decoding
                         self.customCollections = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
