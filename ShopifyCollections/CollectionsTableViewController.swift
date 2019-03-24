@@ -33,9 +33,6 @@ class CollectionsTableViewController: UITableViewController {
         if let title = customCollections?.custom_collections[indexPath.row].title {
             cell.textLabel?.text = title
         }
-        if let id = customCollections?.custom_collections[indexPath.row].id {
-            cell.detailTextLabel?.text = String(id)
-        }
         
         return cell
     }
