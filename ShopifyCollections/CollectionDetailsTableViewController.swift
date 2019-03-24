@@ -19,6 +19,23 @@ class CollectionDetailsTableViewController: UITableViewController {
         getProductDetails()
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let productsCount = products?.collects.count {
+            return productsCount
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
+        
+        if let productId = products?.collects[indexPath.row].product_id {
+            cell.textLabel?.text = String(productId)
+        }
+        
+        return cell
+    }
+    
     // MARK: - Helper method
     func getProductDetails() {
         if let url = URL(string: "https://shopicruit.myshopify.com/admin/collects.json?collection_id=\(String(currentCollection!.id))&page=1&access_token=") {
@@ -47,6 +64,9 @@ class CollectionDetailsTableViewController: UITableViewController {
                         
                         // Update the class property to the result from decoding
                         self.products = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
