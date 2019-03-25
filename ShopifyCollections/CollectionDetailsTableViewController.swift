@@ -12,13 +12,13 @@ class CollectionDetailsTableViewController: UITableViewController {
     var currentCollection: Collection?
     var products: Products?
     var productDetails: ProductDetails?
+    var productIdQueryString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(currentCollection ?? "")
         getProductIds()
-        getProductDetails()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,8 +63,24 @@ class CollectionDetailsTableViewController: UITableViewController {
                         print("in results")
                         print(result)
                         
+                        print("--------")
+                        for (index, item) in result.collects.enumerated() {
+                            print(item.product_id)
+                            self.productIdQueryString += String(item.product_id)
+                            if index < (result.collects.count - 1) {
+                                // append a comma if not the last id
+                                self.productIdQueryString += ","
+                            }
+                        }
+                        print("--------")
+                        print("productIdQueryString: ")
+                        print(self.productIdQueryString)
+                        
                         // Update the class property to the result from decoding
                         self.products = result
+                        
+                        // After completion handler is done getting product id's and building the query string, then can call to query for the product details
+                        self.getProductDetails()
                     }
                 }
             }
@@ -73,7 +89,7 @@ class CollectionDetailsTableViewController: UITableViewController {
     }
     
     func getProductDetails() {
-        if let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=2759137027,2759143811&page=1&access_token=\(apiKey)") {
+        if let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=\(productIdQueryString)&page=1&access_token=\(apiKey)") {
             print("url: \(url)")
             
             // Use the shared URLSession singleton object to create a data task to get the contents for the url
@@ -99,6 +115,7 @@ class CollectionDetailsTableViewController: UITableViewController {
                         
                         // Update the class property to the result from decoding
                         self.productDetails = result
+                        
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
