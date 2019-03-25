@@ -12,4 +12,5 @@ class ProductDetailCell: UITableViewCell {
     @IBOutlet var collectionTitle: UILabel!
     @IBOutlet var productName: UILabel!
     @IBOutlet var totalInventory: UILabel!
+    @IBOutlet var productImageView: UIImageView!
 }

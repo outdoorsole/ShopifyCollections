@@ -68,31 +68,51 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Inventory" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtJ-re-tuc">
-                                            <rect key="frame" x="235" y="68" width="113" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Total Inventory" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtJ-re-tuc">
+                                            <rect key="frame" x="238.5" y="65.5" width="112.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-gB-BrC">
-                                            <rect key="frame" x="16" y="11" width="110" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urm-cx-ASi">
+                                            <rect key="frame" x="244" y="38.5" width="107" height="23"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection Title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urm-cx-ASi">
-                                            <rect key="frame" x="16" y="67" width="115" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Product Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-gB-BrC">
+                                            <rect key="frame" x="234.5" y="15" width="116.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zzj-h5-hRE">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="99.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Isd-zE-iHP"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xtJ-re-tuc" firstAttribute="top" secondItem="urm-cx-ASi" secondAttribute="bottom" constant="4" id="3le-10-qEX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xtJ-re-tuc" secondAttribute="trailing" constant="8" id="Cbx-2S-a96"/>
+                                        <constraint firstItem="3eo-gB-BrC" firstAttribute="top" secondItem="3Dc-Us-AeS" secondAttribute="topMargin" constant="4" id="F9O-86-RCd"/>
+                                        <constraint firstItem="Zzj-h5-hRE" firstAttribute="leading" secondItem="3Dc-Us-AeS" secondAttribute="leading" id="L2t-e8-bOR"/>
+                                        <constraint firstItem="xtJ-re-tuc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zzj-h5-hRE" secondAttribute="trailing" constant="8" symbolic="YES" id="Qbp-Gf-FA3"/>
+                                        <constraint firstItem="urm-cx-ASi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zzj-h5-hRE" secondAttribute="trailing" constant="8" symbolic="YES" id="Uo2-f6-h1m"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3eo-gB-BrC" secondAttribute="trailing" constant="8" id="UqL-45-wzG"/>
+                                        <constraint firstItem="3eo-gB-BrC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zzj-h5-hRE" secondAttribute="trailing" constant="8" symbolic="YES" id="aR6-t0-kzq"/>
+                                        <constraint firstItem="urm-cx-ASi" firstAttribute="top" secondItem="3eo-gB-BrC" secondAttribute="bottom" constant="3" id="dqa-zr-DOU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="urm-cx-ASi" secondAttribute="trailing" constant="8" id="g1T-K4-9cA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xtJ-re-tuc" secondAttribute="bottom" constant="3" id="j00-nI-W97"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zzj-h5-hRE" secondAttribute="bottom" id="jDN-UW-m48"/>
+                                        <constraint firstItem="xtJ-re-tuc" firstAttribute="top" secondItem="urm-cx-ASi" secondAttribute="bottom" constant="4" id="rVi-fe-Ahw"/>
+                                        <constraint firstItem="Zzj-h5-hRE" firstAttribute="top" secondItem="3Dc-Us-AeS" secondAttribute="top" id="xXQ-Fm-3FL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="collectionTitle" destination="urm-cx-ASi" id="gRQ-RW-iSu"/>
+                                    <outlet property="productImageView" destination="Zzj-h5-hRE" id="4tJ-he-QQq"/>
                                     <outlet property="productName" destination="3eo-gB-BrC" id="IoW-0e-RCb"/>
                                     <outlet property="totalInventory" destination="xtJ-re-tuc" id="tdl-kf-7Ni"/>
                                 </connections>

@@ -16,8 +16,13 @@ struct ProductDetail: Codable {
     let id: Int
     let title: String
     let variants: [Variant]
+    let image: ProductPhoto
 }
 
 struct Variant: Codable {
     let inventory_quantity: Int
+}
+
+struct ProductPhoto: Codable {
+    let src: URL
 }

@@ -51,7 +51,16 @@ class CollectionDetailsTableViewController: UITableViewController {
             for variant in variants {
                 totalInventory += variant.inventory_quantity
             }
-            cell.totalInventory.text = String(totalInventory)
+            cell.totalInventory.text = "Total: \(totalInventory)"
+        }
+        
+        if let imageURL = productDetails?.products[indexPath.row].image.src {
+            guard let data = try? Data(contentsOf: imageURL) else {
+                print("Error downloading photo")
+                return cell
+            }
+            
+            cell.productImageView.image = UIImage(data: data)
         }
         
         return cell
@@ -73,17 +82,13 @@ class CollectionDetailsTableViewController: UITableViewController {
                 }
                 
                 if let data = data {
-                    print("data \(data)")
                     
                     // Create an instance of JSONDecoder to decode data
                     let jsonDecoder = JSONDecoder()
                     
                     // Try to decode the returned data with the Codable Products type
                     if let result = try? jsonDecoder.decode(Products.self, from: data) {
-                        print("in results")
-                        print(result)
-                        
-                        print("--------")
+
                         for (index, item) in result.collects.enumerated() {
                             print(item.product_id)
                             self.productIdQueryString += String(item.product_id)
@@ -92,9 +97,6 @@ class CollectionDetailsTableViewController: UITableViewController {
                                 self.productIdQueryString += ","
                             }
                         }
-                        print("--------")
-                        print("productIdQueryString: ")
-                        print(self.productIdQueryString)
                         
                         // Update the class property to the result from decoding
                         self.products = result
@@ -110,12 +112,10 @@ class CollectionDetailsTableViewController: UITableViewController {
     
     func getProductDetails() {
         if let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=\(productIdQueryString)&page=1&access_token=\(apiKey)") {
-            print("url: \(url)")
             
             // Use the shared URLSession singleton object to create a data task to get the contents for the url
             let task = URLSession.shared.dataTask(with: url) {
                 (data, response, error) in
-                print("in the completion handler for data task for getProductDetails()")
                 
                 if let error = error {
                     print("error: \(error)")
@@ -123,19 +123,16 @@ class CollectionDetailsTableViewController: UITableViewController {
                 }
                 
                 if let data = data {
-                    print("data \(data)")
                     
                     // Create an instance of JSONDecoder to decode data
                     let jsonDecoder = JSONDecoder()
                     
                     // Try to decode the returned data with the Codable ProductDetails type
                     if let result = try? jsonDecoder.decode(ProductDetails.self, from: data) {
-                        print("in results")
-                        print(result)
                         
                         // Update the class property to the result from decoding
                         self.productDetails = result
-                        
+
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
