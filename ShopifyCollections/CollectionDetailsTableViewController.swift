@@ -39,7 +39,7 @@ class CollectionDetailsTableViewController: UITableViewController {
     
     // MARK: - Helper method
     func getProductIds() {
-        if let url = URL(string: "https://shopicruit.myshopify.com/admin/collects.json?collection_id=\(String(currentCollection!.id))&page=1&access_token=") {
+        if let url = URL(string: "https://shopicruit.myshopify.com/admin/collects.json?collection_id=\(String(currentCollection!.id))&page=1&access_token=\(apiKey)") {
             print("url: \(url)")
             
             // Use the shared URLSession singleton object to create a data task to get the contents for the url
@@ -73,7 +73,7 @@ class CollectionDetailsTableViewController: UITableViewController {
     }
     
     func getProductDetails() {
-        if let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=2759137027,2759143811&page=1&access_token=") {
+        if let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=2759137027,2759143811&page=1&access_token=\(apiKey)") {
             print("url: \(url)")
             
             // Use the shared URLSession singleton object to create a data task to get the contents for the url

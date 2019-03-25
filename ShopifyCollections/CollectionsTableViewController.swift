@@ -45,7 +45,7 @@ class CollectionsTableViewController: UITableViewController {
     
     // MARK: - Helper method
     func getCollections() {
-        if let url = URL(string: "https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=") {
+        if let url = URL(string: "https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=\(apiKey)") {
             print("url: \(url)")
             
             // Use the shared URLSession singleton object to create a data task to get the contents for the url
