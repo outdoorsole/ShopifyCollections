@@ -15,4 +15,9 @@ struct ProductDetails: Codable {
 struct ProductDetail: Codable {
     let id: Int
     let title: String
+    let variants: [Variant]
+}
+
+struct Variant: Codable {
+    let inventory_quantity: Int
 }

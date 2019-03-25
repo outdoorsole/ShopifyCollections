@@ -17,6 +17,8 @@ class CollectionDetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 150
+        
         print(currentCollection ?? "")
         getProductIds()
     }
@@ -29,9 +31,18 @@ class CollectionDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
+        var totalInventory = 0
+        
+        // Use the custom cell type
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productDetailCell", for: indexPath) as! ProductDetailCell
         if let productName = productDetails?.products[indexPath.row].title {
-            cell.textLabel?.text = productName
+            cell.productName.text = productName
+        }
+        if let variants = productDetails?.products[indexPath.row].variants {
+            for variant in variants {
+                totalInventory += variant.inventory_quantity
+            }
+            cell.totalInventory.text = String(totalInventory)
         }
         
         return cell
