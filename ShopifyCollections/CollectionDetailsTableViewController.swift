@@ -9,7 +9,11 @@
 import UIKit
 
 class CollectionDetailsTableViewController: UITableViewController {
-    var currentCollection: Collection?
+    var currentCollection: Collection? {
+        didSet {
+            navigationItem.title = currentCollection?.title
+        }
+    }
     var products: Products?
     var productDetails: ProductDetails?
     var productIdQueryString = ""
@@ -38,6 +42,11 @@ class CollectionDetailsTableViewController: UITableViewController {
         if let productName = productDetails?.products[indexPath.row].title {
             cell.productName.text = productName
         }
+        
+        if let collectionName = currentCollection?.title {
+            cell.collectionTitle.text = collectionName
+        }
+        
         if let variants = productDetails?.products[indexPath.row].variants {
             for variant in variants {
                 totalInventory += variant.inventory_quantity
