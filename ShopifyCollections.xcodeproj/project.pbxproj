@@ -15,6 +15,7 @@
 		16530A6122482F41008B953E /* CustomCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A6022482F41008B953E /* CustomCollections.swift */; };
 		16530A6322483E0B008B953E /* CollectionDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A6222483E0B008B953E /* CollectionDetailsTableViewController.swift */; };
 		16530A6522484835008B953E /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A6422484835008B953E /* Products.swift */; };
+		16530A6722485141008B953E /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16530A6622485141008B953E /* ProductDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		16530A6022482F41008B953E /* CustomCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollections.swift; sourceTree = "<group>"; };
 		16530A6222483E0B008B953E /* CollectionDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsTableViewController.swift; sourceTree = "<group>"; };
 		16530A6422484835008B953E /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		16530A6622485141008B953E /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				16530A502247FE99008B953E /* Info.plist */,
 				16530A6022482F41008B953E /* CustomCollections.swift */,
 				16530A6422484835008B953E /* Products.swift */,
+				16530A6622485141008B953E /* ProductDetails.swift */,
 				16530A6222483E0B008B953E /* CollectionDetailsTableViewController.swift */,
 				16530A5A22480357008B953E /* CollectionsTableViewController.swift */,
 			);
@@ -148,6 +151,7 @@
 				16530A6122482F41008B953E /* CustomCollections.swift in Sources */,
 				16530A6522484835008B953E /* Products.swift in Sources */,
 				16530A6322483E0B008B953E /* CollectionDetailsTableViewController.swift in Sources */,
+				16530A6722485141008B953E /* ProductDetails.swift in Sources */,
 				16530A5B22480357008B953E /* CollectionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
